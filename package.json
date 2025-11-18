@@ -1,0 +1,27 @@
+{
+  "name": "ciras_meet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.19.4",
+    "peer": "^1.0.2",
+    "peerjs": "^1.5.5",
+    "session": "^0.1.0",
+    "socket.io": "^4.8.1"
+  }
+}

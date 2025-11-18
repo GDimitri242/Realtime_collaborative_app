@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Daisy UI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="/css/daisy.css">
+</head>
+<body class="min-h-screen">
+    <!-- Header Hero -->
+    <header class="hero-header">
+        <div class="navbar bg-base-100 bg-opacity-10 ">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </div>
+                </div>
+                <a class="btn btn-ghost text-xl gap-2">
+                    CIRAS MEET
+                </a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                
+            </div>
+            <div class="navbar-end">
+                <div class="flex gap-2">
+                    <a href="/login" class="btn btn-ghost ">Connexion</a>
+                    <a href="/register" class="btn btn-primary">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-8 px-4 h-full">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Hero Section -->
+            <div class="text-center mb-12 fade-in">
+                <h1 class="text-5xl font-bold  mb-4">Réunions en Visioconférence</h1>
+                <p class="text-xl  opacity-90 max-w-2xl mx-auto">
+                    Solution de visioconférence avec partage d'écran, audio et vidéo.
+                </p>
+            </div>
+
+            <!-- Features Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
+                <div class="glass-card shadow-deep border-gray-200 text-center fade-in" style="animation-delay: 0.3s;">
+                    <div class="bg-white bg-opacity-10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎥</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Vidéo HD</h3>
+                    <p class=" text-opacity-80 mb-2">Qualité vidéo optimale pour des réunions professionnelles</p>
+                </div>
+                
+                <div class="glass-card shadow-deep border-gray-200 text-center  fade-in" style="animation-delay: 0.4s;">
+                    <div class="bg-white bg-opacity-10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🖥️</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Partage d'écran</h3>
+                    <p class=" text-opacity-80 mb-2">Partagez votre écran en un clic</p>
+                </div>
+                
+                <div class="glass-card shadow-deep border-gray-200 text-center fade-in" style="animation-delay: 0.5s;">
+                    <div class="bg-white bg-opacity-10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Sécurisé</h3>
+                    <p class="text-opacity-80 mb-2">Vos réunions sont privées et sécurisées</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>

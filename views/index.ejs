@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= title %>
+    </title>
+    <!-- Daisy UI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="/css/daisy.css" />
+</head>
+
+<body class="min-h-screen">
+    <!-- Header Hero -->
+    <header class="hero-header">
+        <div class="navbar bg-base-100 bg-opacity-10 ">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="m 13.265625 10.476562 l 2.1875 -2.476562 h 0.546875 v 5.003906 h -0.535156 z m -6.265625 -3.476562 h 5 c 0.554688 0 1 0.445312 1 1 v 5 c 0 0.554688 -0.445312 1 -1 1 h -5 c -0.554688 0 -1 -0.445312 -1 -1 v -5 c 0 -0.554688 0.445312 -1 1 -1 z m 0 0" fill="#ffffff"></path> <path d="m 4 1.996094 c -0.554688 0 -1 0.445312 -1 1 v 5.007812 c 0 0.550782 0.445312 1 1 1 h 0.996094 v -1.003906 c 0 -1.050781 0.953125 -2.007812 2.003906 -2.003906 h 3 v -3 c 0 -0.554688 -0.445312 -1 -1 -1 z m -4 1.007812 v 5.003906 h 0.480469 l 2.253906 -2.585937 l -2.125 -2.417969 z m 0 0" fill="#2e3434" fill-opacity="0.34902"></path> </g></svg>
+                    </div>
+                </div>
+                <a class="btn btn-ghost text-xl gap-2">
+                    CIRAS MEET
+                </a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <div class="lex items-center justify-center">
+                    <span class="text-lg">
+                        <%= currentUser.username %>
+                    </span>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <% if (typeof currentUser !=='undefined' && currentUser) { %>
+                  <div class="flex gap-2">
+                      <a href="/logout" class="btn btn-ghost text-error">Déconnexion</a>
+                  </div>
+                <% } else { %>
+                  <div class="flex gap-2">
+                      <a href="/login" class="btn btn-ghost ">Connexion</a>
+                      <a href="/register" class="btn btn-primary">Inscription</a>
+                  </div>
+                <% } %>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-8 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Hero Section -->
+            <div class="text-center mb-12 fade-in">
+                <h1 class="text-5xl font-bold  mb-4">
+                    Réunions en Visioconférence
+                </h1>
+                <p class="text-xl  opacity-90 max-w-2xl mx-auto">
+                    Solution de visioconférence avec partage d'écran,
+                    audio et vidéo.
+                </p>
+            </div>
+
+            <!-- Messages d'erreur -->
+            <% if (typeof erreur !=='undefined' ) { %>
+                <div class="alert alert-error max-w-2xl mx-auto mb-8 shadow-deep">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>
+                        <%= erreur %>
+                    </span>
+                </div>
+                <% } %>
+
+                    <!-- Cards Section -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        <!-- Créer une réunion -->
+                        <div class="glass-card p-8 shadow-deep border-gray-200 fade-in" style="animation-delay: 0.1s">
+                            <div class="flex items-center gap-3 mb-6">
+                                <h2 class="text-2xl font-bold ">Créer une Réunion</h2>
+                            </div>
+
+                            <form action="/creer-reunion" method="POST" class="space-y-4">
+                                <button type="submit" class="btn btn-primary btn-lg w-full btn-glow mt-6">
+                                    <span class="text-lg">Créer la Réunion</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Rejoindre une réunion -->
+                        <div class="glass-card p-8 shadow-deep fade-in border-gray-200" style="animation-delay: 0.2s">
+                            <div class="flex items-center gap-3 mb-6">
+                                <h2 class="text-2xl font-bold ">
+                                    Rejoindre une Réunion
+                                </h2>
+                            </div>
+
+                            <form action="/rejoindre-reunion" method="POST" class="space-y-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text  text-lg">ID de la réunion</span>
+                                    </label>
+                                    <input type="text" name="idReunion" placeholder="Entrez l'ID de réunion..."
+                                        class="input input-bordered input-lg bg-opacity-10 border-white border-opacity-20  placeholder-black placeholder-opacity-60"
+                                        required />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg w-full btn-glow mt-6">
+                                    <span class="text-lg">Rejoindre la Réunion</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Animation au chargement
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".fade-in");
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+
+</html>

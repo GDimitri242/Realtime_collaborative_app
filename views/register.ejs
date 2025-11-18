@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/daisy.css">
+</head>
+<body class="min-h-screen">
+    <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row">
+            <div class="text-center lg:text-left lg:mr-12">
+                <h1 class="text-5xl font-bold">Rejoignez-nous !</h1>
+                <p class="py-6 opacity-80">
+                    Créez votre compte CIRAS MEET et découvrez une nouvelle façon de collaborer en temps réel.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                            <span class="text-sm">✓</span>
+                        </div>
+                        <span>Créez des réunions instantanées</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <span class="text-sm">✓</span>
+                        </div>
+                        <span>Communications sécurisées</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                            <span class="text-sm">✓</span>
+                        </div>
+                        <span>Tableaux collaboratifs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card shadow-deep border-gray-200 w-full max-w-sm shadow-2xl">
+                <form action="/register" method="POST" class="card-body">
+                    <h2 class="card-title text-2xl font-bold mb-6">Inscription</h2>
+                    
+                    <% if (typeof error !== 'undefined') { %>
+                    <div class="alert alert-error mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><%= error %></span>
+                    </div>
+                    <% } %>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Nom d'utilisateur</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            placeholder="Votre nom d'utilisateur" 
+                            class="input input-bordered bg-opacity-10 border-white border-opacity-20"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Email</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="votre@email.com" 
+                            class="input input-bordered bg-opacity-10 border-white border-opacity-20"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Mot de passe</span>
+                        </label>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            placeholder="Votre mot de passe" 
+                            class="input input-bordered bg-opacity-10 border-white border-opacity-20"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Confirmer le mot de passe</span>
+                        </label>
+                        <input 
+                            type="password" 
+                            name="confirmPassword" 
+                            placeholder="Confirmez votre mot de passe" 
+                            class="input input-bordered bg-opacity-10 border-white border-opacity-20"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-control mt-6">
+                        <button type="submit" class="btn btn-primary btn-glow">S'inscrire</button>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <span class="text-white opacity-70">Déjà un compte ? </span>
+                        <a href="/login" class="text-primary hover:underline">Se connecter</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
