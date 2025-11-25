@@ -1,17 +1,10 @@
 // middleware/auth.js
 const requireAuth = (req, res, next) => {
-    if (!req.session.user) {
-        console.log('Utilisateur non authentifié, redirection vers /login');
-        return res.redirect('/login');
+    if (req.session.userId) {
+        return next();
     }
-    next();
+    console.log('Utilisateur non authentifié, redirection vers /login');
+    return res.redirect('/login');
 };
 
-const requireGuest = (req, res, next) => {
-    if (req.session.user) {
-        return res.redirect('/');
-    }
-    next();
-};
-
-module.exports = { requireAuth, requireGuest };
+module.exports = { requireAuth };
