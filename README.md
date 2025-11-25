@@ -75,16 +75,27 @@ Note : Votre navigateur affichera une alerte de sécurité car le certificat est
 ## Structure du projet
 
 ├── certificats/       # Clés SSL (à générer)
+
 ├── public/            # Fichiers statiques (CSS, JS client, Images)
+
 │   ├── script.js      # Logique client (Socket.io, PeerJS, Canvas)
+
 │   └── style.css      # Styles globaux
+
 ├── views/             # Templates EJS
+
 │   ├── dashboard.ejs  # Dashboard utilisateur
+
 │   ├── index.ejs      # Page d'accueil publique
+
 │   ├── room.ejs       # Salle de réunion
+
 │   ├── login.ejs      # Page de connexion
+
 │   └── register.ejs   # Page d'inscription
+
 ├── server.js          # Serveur principal (Express, Socket, Mongo)
+
 └── package.json       # Dépendances
 
 ## Contribution
