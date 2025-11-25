@@ -90,11 +90,11 @@ ciras_meet/
 ## Contribution
 Les contributions sont les bienvenues !
 
-Forkez le projet.
-Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature).
-Commitez vos changements (git commit -m 'Add some AmazingFeature').
-Push vers la branche (git push origin feature/AmazingFeature).
-Ouvrez une Pull Request.
+Forkez le projet.  
+Créez votre branche de fonctionnalité (git checkout -b feature/AmazingFeature).  
+Commitez vos changements (git commit -m 'Add some AmazingFeature').  
+Push vers la branche (git push origin feature/AmazingFeature).  
+Ouvrez une Pull Request.  
 
 ## Auteur
 Développé dans le cadre d'un projet académique.
