@@ -64,8 +64,8 @@ navigator.mediaDevices.getUserMedia({
     }
   });*/
 
-  socket.on("createMessage", (message, userName) => {
-    $(".messages").append(`<li class="message"><b>${userName}</b><br/>${message}</li>`);
+  socket.on("createMessage", (message, username) => {
+    $(".messages").append(`<li class="message"><b>${username}</b><br/>${message}</li>`);
     scrollToBottom();
   });
 
