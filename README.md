@@ -1,6 +1,6 @@
 # CIRAS MEET - Plateforme de visioconférence collaborative
 
-![NodeJS](https://img.shields.io/badge/Node.js-14.x-green) ![Socket.io](https://img.shields.io/badge/Socket.io-Realtime-black) ![WebRTC](https://img.shields.io/badge/WebRTC-PeerJS-blue) ![MongoDB](https://img.shields.io/badge/Database-MongoDB-forestgreen)
+![NodeJS](https://img.shields.io/badge/Node.js-14.x-green) ![Socket.io](https://img.shields.io/badge/Socket.io-Realtime-black) ![WebRTC](https://img.shields.io/badge/WebRTC-PeerJS-blue) ![MongoDB](https://img.shields.io/badge/Database-MongoDB-forestgreen) ![Bootstrap](https://img.shields.io/badge/bootstrap-4.5.0-blue)
 
 **CIRAS MEET** est une application web de visioconférence en temps réel conçue pour faciliter le travail collaboratif à distance. Elle combine des fonctionnalités vidéo classiques avec des outils d'interaction avancés comme un tableau blanc partagé et la gestion de prise de parole.
 
