@@ -76,9 +76,9 @@ Note : Votre navigateur affichera une alerte de sécurité car le certificat est
 **ciras_meet/**  
 ├── **certificats/**   # Clés SSL (à générer)  
 ├── **config/**        # Configurations base de données   
-│   └── database.js    # Fichier de connexion
+│   └── database.js    # Fichier de connexion  
 ├── **middleware/**    # Middlewares 
-│   └── auth.js        # Fichier de contrôle des connxions utilisateurs
+│   └── auth.js        # Fichier de contrôle des connxions utilisateurs  
 ├── **public/**        # Fichiers statiques (CSS, JS client, Images)  
 │   ├── script.js      # Logique client (Socket.io, PeerJS, Canvas)  
 │   └── style.css      # Styles globaux  
