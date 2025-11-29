@@ -89,7 +89,7 @@ Note : Votre navigateur affichera une alerte de sécurité car le certificat est
 │   ├── login.ejs      # Page de connexion  
 │   └── register.ejs   # Page d'inscription  
 ├── server.js          # Serveur principal (Express, Socket, Mongo)  
-├── package-lock.json
+├── package-lock.json  
 └── package.json       # Dépendances
 
 ## Contribution
